@@ -15,7 +15,7 @@ export class RoomManager{
         const roomId= this.generate();
         this.rooms.set(roomId.toString(),{
             user1,user2
-        });
+        }); 
         user1?.socket.emit("send-offer",{
           
             roomId
@@ -38,10 +38,6 @@ const user1= this.rooms.get(roomId)?.user1;
 
         })
     }
-
-
-
-
 
     generate(){
         return GLOBAL_ROOM_ID++;
